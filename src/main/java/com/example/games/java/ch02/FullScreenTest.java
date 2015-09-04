@@ -1,4 +1,4 @@
-package com.example.games.java;
+package com.example.games.java.ch02;
 
 import javax.swing.*;
 import java.awt.*;
