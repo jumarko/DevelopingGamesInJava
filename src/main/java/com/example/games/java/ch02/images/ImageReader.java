@@ -11,7 +11,7 @@ import java.net.URL;
 
 public class ImageReader {
 
-    public Image readImage(String imagePath) {
+    public static Image readImage(String imagePath) {
         notEmpty(imagePath, "imagePath cannot be empty!");
 
         // following code triggers loading image in separate thread

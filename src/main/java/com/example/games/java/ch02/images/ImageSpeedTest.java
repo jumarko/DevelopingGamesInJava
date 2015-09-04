@@ -1,9 +1,12 @@
 package com.example.games.java.ch02.images;
 
+import static com.example.games.java.ch02.DisplayModeUtils.getDisplayMode;
 import static com.example.games.java.ch02.images.ImageReader.getResourcePath;
+import static com.example.games.java.ch02.images.ImageReader.readImage;
 import static java.awt.RenderingHints.*;
 import static java.lang.Integer.parseInt;
 
+import com.example.games.java.ch02.DisplayModeUtils;
 import com.example.games.java.ch02.SimpleScreenManager;
 
 import javax.swing.*;
@@ -29,15 +32,7 @@ public class ImageSpeedTest extends JFrame {
     private Image antiAliasedImage;
 
     public static void main(String[] args) {
-        final DisplayMode displayMode;
-        if (args.length == 3) {
-            displayMode = new DisplayMode(parseInt(args[0]), parseInt(args[1]), parseInt(args[2]),
-                    DisplayMode.REFRESH_RATE_UNKNOWN);
-        } else {
-            displayMode = new DisplayMode(800, 600, 16, DisplayMode.REFRESH_RATE_UNKNOWN);
-        }
-
-        new ImageSpeedTest().run(displayMode);
+        new ImageSpeedTest().run(getDisplayMode(args));
     }
 
     @Override
@@ -106,11 +101,11 @@ public class ImageSpeedTest extends JFrame {
     }
 
     private void loadImages() {
-        bgImage = imageReader.readImage(getResourcePath("ch02/images/background.jpg"));
-        opaqueImage = imageReader.readImage(getResourcePath("ch02/images/opaque.png"));
-        transparentImage = imageReader.readImage(getResourcePath("ch02/images/transparent.png"));
-        translucentImage = imageReader.readImage(getResourcePath("ch02/images/translucent.png"));
-        antiAliasedImage = imageReader.readImage(getResourcePath("ch02/images/antialiased.png"));
+        bgImage = readImage(getResourcePath("ch02/images/background.jpg"));
+        opaqueImage = readImage(getResourcePath("ch02/images/opaque.png"));
+        transparentImage = readImage(getResourcePath("ch02/images/transparent.png"));
+        translucentImage = readImage(getResourcePath("ch02/images/translucent.png"));
+        antiAliasedImage = readImage(getResourcePath("ch02/images/antialiased.png"));
         imagesLoaded = true;
 
         // signals AWT to repaint window
