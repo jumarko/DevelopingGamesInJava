@@ -1,5 +1,6 @@
 package com.example.games.java.ch02;
 
+import static com.example.games.java.ch02.images.ImageReader.getResourcePath;
 import static org.apache.commons.lang3.Validate.notEmpty;
 import static org.apache.commons.lang3.Validate.notNull;
 
@@ -30,15 +31,6 @@ public class FullScreenTest extends JFrame {
         final Image playerImage = imageReader.readImage(getResourcePath(PLAYER_IMAGE_PATH));
         g.drawImage(playerImage, 100, 100, null);
     }
-
-    private static String getResourcePath(String resourcePath) {
-        notEmpty(resourcePath, "resourcePath cannot be empty!");
-
-        final URL resource = FullScreenTest.class.getClassLoader().getResource(resourcePath);
-        notNull(resource, "Cannot find any resource denoted by path: " + resourcePath);
-        return resource.getFile();
-    }
-
 
 
     private void run() {

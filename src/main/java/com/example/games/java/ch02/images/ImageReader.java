@@ -1,11 +1,13 @@
 package com.example.games.java.ch02.images;
 
 import static org.apache.commons.lang3.Validate.notEmpty;
+import static org.apache.commons.lang3.Validate.notNull;
 
 import com.example.games.java.ch02.SimpleScreenManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 public class ImageReader {
 
@@ -21,7 +23,14 @@ public class ImageReader {
         return imageIcon.getImage();
     }
 
-    public static void main(String[] args) {
+    public static String getResourcePath(String resourcePath) {
+        notEmpty(resourcePath, "resourcePath cannot be empty!");
 
+        final URL resource = ImageTest.class.getClassLoader().getResource(resourcePath);
+        notNull(resource, "Cannot find any resource denoted by path: " + resourcePath);
+        return resource.getFile();
     }
+
+
+
 }
