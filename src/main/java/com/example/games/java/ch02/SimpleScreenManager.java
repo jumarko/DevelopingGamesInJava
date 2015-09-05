@@ -3,6 +3,9 @@ package com.example.games.java.ch02;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @deprecated check new {@link DoubleBufferScreenManager} which uses double buffering
+ */
 public class SimpleScreenManager {
 
     private final GraphicsDevice device;
