@@ -74,7 +74,7 @@ public class DoubleBufferScreenManager {
         setFullScreen(findFirstCompatibleMode(possibleModes));
     }
 
-    public void setFullScreen(DisplayMode displayMode) {
+    private void setFullScreen(DisplayMode displayMode) {
 
         final JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -18,7 +18,7 @@ public class AnimationTest2 {
 
     private static final long DEMO_TIME_MILLIS = 5000;
 
-    private static final DisplayMode[] POSSIBLE_MODES = {
+    public static final DisplayMode[] POSSIBLE_MODES = {
             new DisplayMode(1280, 800, 32, 0),
             new DisplayMode(1280, 800, 24, 0),
             new DisplayMode(1280, 800, 16, 0)
